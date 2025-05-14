@@ -93,14 +93,6 @@ public class UmengPushSdkPlugin implements FlutterPlugin, MethodCallHandler {
         mChannel = null;
     }
 
-    public static void registerWith(Registrar registrar) {
-        MethodChannel channel = new MethodChannel(registrar.messenger(), "u-push");
-        UmengPushSdkPlugin plugin = new UmengPushSdkPlugin();
-        plugin.mContext = registrar.context();
-        plugin.mChannel = channel;
-        channel.setMethodCallHandler(plugin);
-    }
-
     @Override
     public void onMethodCall(MethodCall call, Result result) {
         try {
